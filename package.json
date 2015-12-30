@@ -1,0 +1,40 @@
+{
+  "name": "tabula-rasa",
+  "version": "1.0.0",
+  "description": "JavaScript SDK for IIIF Presentation API",
+  "main": "dist/labelGen.js",
+  "scripts": {
+    "dev": "babel-node src/sequence.js",
+    "lint": "eslint src/**/*.js",
+    "compile": "babel --stage 0 -d dist/ src/",
+    "prepublish": "npm run compile",
+    "test": "babel-node node_modules/argg src/test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdellis/tabula-rasa"
+  },
+  "keywords": [
+    "module",
+    "npm",
+    "iiif",
+    "babel",
+    "es6",
+    "tape"
+  ],
+  "author": "shaun@sdellis.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-polyfill": "^6",
+    "argg": "0.0.2",
+    "babel": "^5",
+    "babel-eslint": "^4.1.0",
+    "eslint": "^1.2.1",
+    "tape": "^4.2.0"
+  },
+  "dependencies": {
+    "ampersand-collection": "^1.5.0",
+    "ampersand-model": "^6.0.2",
+    "ampersand-rest-collection": "^5.0.0"
+  }
+}
