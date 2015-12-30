@@ -1,49 +1,51 @@
-import Model from 'ampersand-model'
-import ManifestCollection from './manifest-collection'
-import IIIFCollection from './collection-collection'
-import ServiceCollection from './service-collection'
+import AmpersandModel from 'ampersand-model'
+import AmpersandCollection from 'ampersand-rest-collection'
+import ManifestList from './manifest-collection'
+import ServiceList from './service-collection'
 
-export default Model.extend({
-
-  idAttribute: '_id',
-
-  url () {
-    return 'https://tabula.space/collections/manifests' + '/' + this._id
-  },
-
-  props: {
-    _id: 'string',
-    '@id': 'string',
-    '@type': {
-      type: 'string',
-      required: 'true',
-      default: 'sc:Collection'
+var CollectionList = AmpersandCollection.extend({
+    mainIndex: '_id',
+    model: function(props, options){
+        return new Collection(props, options);
     },
-    label: 'string',
-    logo: 'string',
-    license: 'string',
-    viewingHint: 'string',
-    related: 'string',
-    seeAlso: 'string',
-    within: 'string',
-    thumbnail: 'string',
-    description: 'string',
-    attribution: 'string',
-    metadata: 'array'
-  },
-
-  collections: {
-    manifests: ManifestCollection,
-    collections: IIIFCollection,
-    services: ServiceCollection
-  },
-
-  derived: {
-    app_url: {
-      deps: ['_id'],
-      fn () {
-        return 'collections/' + this._id
-      }
+    isModel: function(model){
+        return model instanceof Collection;
     }
-  }
+});
+
+var Collection = AmpersandModel.extend({
+    idAttribute: '_id',
+    url () {
+      return 'http://iiif.io/api/presentation/2.0/example/fixtures/collection.json'
+    },
+    props: {
+      _id: 'string',
+      '@id': 'string',
+      '@type': {
+        type: 'string',
+        required: 'true',
+        default: 'sc:Collection'
+      },
+      label: 'string',
+      logo: 'string',
+      license: 'string',
+      viewingHint: 'string',
+      related: 'string',
+      seeAlso: 'string',
+      within: 'string',
+      thumbnail: 'string',
+      description: 'string',
+      attribution: 'string',
+      metadata: 'array'
+    },
+    collections: {
+      manifests: ManifestList,
+      collections: CollectionList,
+      services: ServiceList
+    }
 })
+
+module.exports = {
+    Collection: Collection,
+    CollectionList: CollectionList
+}
