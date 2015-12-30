@@ -1,7 +1,7 @@
 {
   "name": "tabula-rasa",
   "version": "1.0.0",
-  "description": "JavaScript SDK for IIIF Presentation API",
+  "description": "Node.js SDK for IIIF Presentation API",
   "main": "dist/labelGen.js",
   "scripts": {
     "dev": "babel-node src/sequence.js",
