@@ -56,7 +56,7 @@ c.manifests.add([
 console.log(c.manifests.get('foo').label) //=> 'Manifest 1'
 c.manifests.get('baz', '@id').label //=> 'Manifest 2'
 
-// fetch from an endpoint
+// fetch from an endpoint (works in browser console, but requires promises to implement)
 c.url = 'http://iiif.io/api/presentation/2.0/example/fixtures/collection.json'
 c.fetch()
 console.log(c.manifests.get('http://iiif.io/api/presentation/2.0/example/fixtures/1/manifest.json', '@id').label[0]['@value']) //=> 'Test 1 Manifest: Minimum Required Fields'
