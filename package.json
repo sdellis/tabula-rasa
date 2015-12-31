@@ -1,6 +1,6 @@
 {
   "name": "tabula-rasa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js SDK for IIIF Presentation API",
   "main": "dist/index.js",
   "scripts": {
