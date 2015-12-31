@@ -23,11 +23,11 @@ test('a collection must be able to contain a list of manifests', function (asser
   assert.equal(ml.isCollection, true, 'the ManifestList should be an Ampersand Collection')
 
   ml.add([
-    { _id: 'a', label: "Manifest 1"},
-    { _id: 'b', label: "Manifest 2"}
+    { _id: 'a', label: [{ '@value': 'Manifest 1'}] },
+    { _id: 'b', label: [{ '@value': 'Manifest 2'}] }
   ])
 
-  assert.equal(ml.get('a').label, 'Manifest 1', 'the first Manifest in the ManifestList should have a label of Manifest 1')
+  assert.equal(ml.get('a').label[0]['@value'], 'Manifest 1', 'the first Manifest in the ManifestList should have a label of Manifest 1')
 
   c.manifests = ml
   assert.equal(c.manifests.length, 2, 'the collection should have a Manifest List with a length of 2')
