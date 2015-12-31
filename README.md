@@ -20,7 +20,7 @@ npm install --save tabula-rasa
 ```
 
 ## Usage
-Once it's installed, you can include it and start building IIIF Presentations.  See below for details, or play with it on the web a the [Tabula Rasa Tonic demo]().
+Once it's installed, you can include it and start building IIIF Presentations.  See below for details, or play with it on the web a the [Tabula Rasa Tonic demo](https://tonicdev.com/sdellis/tabula-rasa-demo).
 ```
 var Presentation = require("tabula-rasa")
 
