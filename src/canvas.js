@@ -21,21 +21,6 @@ export default Model.extend({
   collections: {
     images: ImageCollection,
     other_content: AnnotationListCollection
-  },
-
-  session: {
-    editing: {
-      type: 'boolean',
-      default: false
-    },
-    saved: {
-      type: 'boolean',
-      default: true
-    }
-  },
-
-  isNew () {
-    return !this.saved
   }
 
 })

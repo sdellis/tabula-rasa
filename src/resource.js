@@ -16,21 +16,6 @@ export default Model.extend({
     services: ServiceCollection
   },
 
-  session: {
-    editing: {
-      type: 'boolean',
-      default: false
-    },
-    saved: {
-      type: 'boolean',
-      default: true
-    }
-  },
-
-  isNew () {
-    return !this.saved
-  },
-
   parse: function (response) {
     response.services = []
     if (!Array.isArray(response.service)) {

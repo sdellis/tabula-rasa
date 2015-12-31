@@ -7,21 +7,6 @@ export default Model.extend({
     '@id': 'string',
     '@context': 'string',
     profile: 'string'
-  },
-
-  session: {
-    editing: {
-      type: 'boolean',
-      default: false
-    },
-    saved: {
-      type: 'boolean',
-      default: true
-    }
-  },
-
-  isNew () {
-    return !this.saved
   }
 
 })

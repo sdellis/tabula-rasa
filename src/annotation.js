@@ -20,21 +20,6 @@ export default Model.extend({
     resources: ResourceCollection
   },
 
-  session: {
-    editing: {
-      type: 'boolean',
-      default: false
-    },
-    saved: {
-      type: 'boolean',
-      default: true
-    }
-  },
-
-  isNew () {
-    return !this.saved
-  },
-
   parse: function (response) {
     response.about = response.on // remap an oddly named attribute
     delete response.on

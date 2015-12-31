@@ -4,6 +4,9 @@ import Manifest from './manifest'
 export default Collection.extend({
   url: 'https://tabula.space/collections/manifests',
 
+  mainIndex: '_id',
+  indexes: ['@id'],
+
   model: Manifest,
 
   getById (id) {
