@@ -2,9 +2,9 @@
   "name": "tabula-rasa",
   "version": "1.0.0",
   "description": "Node.js SDK for IIIF Presentation API",
-  "main": "dist/labelGen.js",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "babel-node src/sequence.js",
+    "dev": "babel-node src/index.js",
     "lint": "eslint src/**/*.js",
     "compile": "babel --stage 0 -d dist/ src/",
     "prepublish": "npm run compile",
