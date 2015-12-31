@@ -18,7 +18,7 @@ export default Model.extend({
       required: 'true',
       default: 'sc:Manifest'
     },
-    label: 'string',
+    label: 'array',
     thumbnail: 'string',
     viewingHint: 'string',
     metadata: 'array'
@@ -51,6 +51,20 @@ export default Model.extend({
         return s
       }
     }
+  },
+
+  parse: function (response) {
+    response.labels = []
+    if (!Array.isArray(response.label)) {
+      var l = { '@value': response.label }
+      response.labels.push(l)
+    } else {
+      response.labels = response.label
+    }
+    response.label = response.labels
+    delete response.labels
+
+    return response
   }
 
 })
