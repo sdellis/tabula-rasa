@@ -52,22 +52,15 @@ test('a collection must be able to contain a list of collections', function (ass
 
   assert.equal(c.collections.get('c1').collections.get('c3').label, 'Collection 3', 'the sub-collection c1 should have a collection with an id of c3 and a label of Collection 3')
 
+  assert.end()
+})
 
-/*
-  var cl = new CollectionList()
+test('a collection must be able to be created from an endpoint', function (assert) {
+  assert.plan(0)
+  /* To do: the following code works in the browser console, but requires promises to test. Possibly use local fixtures and mocks.
   var c = new Collection()
-
-  assert.equal(cl.isCollection, true, 'the CollectionList should be an Ampersand Collection')
-
-  cl.add([
-    { _id: 'a', label: "Collection 1"},
-    { _id: 'b', label: "Collection 2"}
-  ])
-
-  assert.equal(cl.get('a').label, 'Collection 1', 'the first Collection in the CollectionList should have a label of Collection 1')
-
-  c.collections = cl
-  assert.equal(c.collections.length, 2, 'the collection should have a CollectionList with a length of 2')
-*/
+  c.fetch()
+  assert.equal(c.manifests.get('http://iiif.io/api/presentation/2.0/example/fixtures/1/manifest.json', '@id').label[0]['@value'], 'Test 1 Manifest: Minimum Required Fields', 'should be populated from endpoint')
+  */
   assert.end()
 })
