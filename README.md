@@ -1,5 +1,7 @@
 # Tabula Rasa
 
+[![Build Status](https://travis-ci.org/sdellis/tabula-rasa.svg?branch=master)](https://travis-ci.org/sdellis/tabula-rasa)
+
 Tabula Rasa is a Node.js SDK (aka, "starter kit") for working with IIIF Presentation API resources (i.e., collections, manifests, canvases, etc.).
 
 It was originally developed as a base library for [Tabula](https://github.com/sdellis/tabula), which can be used to create all sorts of useful native web apps that work with IIIF APIs. However, it can just as easily be used on the server to create and edit IIIF Presentation API resources.  
@@ -50,7 +52,7 @@ c.manifests.get('baz', '@id').label //=> 'Manifest 2'
 ```
 
 ## Tests
-Tabula Rasa uses [Standard](http://standardjs.com/) to enforce a simple code style. Unit tests are run with [Tape](https://github.com/substack/tape). 
+Tabula Rasa uses [Standard](http://standardjs.com/) to enforce a simple code style. Unit tests are run with [Tape](https://github.com/substack/tape).
 ```
 npm test
 ```
