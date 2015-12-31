@@ -21,7 +21,7 @@ npm install --save tabula-rasa
 If you want to include it in your ES2015 project then, point to the ES6 release on GitHub as one of your package.json dependencies:
 ```
 "dependencies": {
-    "tabula-rasa": "https://github.com/sdellis/tabula-rasa/archive/1.0.2.tar.gz"
+    "tabula-rasa": "https://github.com/sdellis/tabula-rasa/archive/es6-1.0.2.tar.gz"
   },
 ```
 
