@@ -13,6 +13,21 @@ test('manifest @type must equal sc:Manifest', function (assert) {
   assert.end()
 })
 
+test('manifest must have _id', function (assert) {
+  assert.plan(1)
+
+  var ml = new ManifestList()
+
+  ml.add([
+    { '@id': 'bar', label: [{ '@value': 'Manifest 1'}] },
+    { '@id': 'baz', label: [{ '@value': 'Manifest 2'}] }
+  ])
+
+  assert.ok(ml.get('baz', '@id')._id)
+
+  assert.end()
+})
+
 test('must be able to get manifest by _id and @id', function (assert) {
   assert.plan(2)
 

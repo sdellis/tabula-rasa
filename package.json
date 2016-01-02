@@ -35,6 +35,7 @@
   "dependencies": {
     "ampersand-collection": "^1.5.0",
     "ampersand-model": "^6.0.2",
-    "ampersand-rest-collection": "^5.0.0"
+    "ampersand-rest-collection": "^5.0.0",
+    "node-uuid": "^1.4.7"
   }
 }

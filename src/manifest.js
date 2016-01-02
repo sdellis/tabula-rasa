@@ -1,3 +1,4 @@
+import uuid from 'node-uuid'
 import Model from 'ampersand-model'
 import SequenceCollection from './sequence-collection'
 
@@ -6,7 +7,11 @@ export default Model.extend({
   idAttribute: '_id',
 
   props: {
-    _id: 'string',
+    _id: {
+      type: 'string',
+      required: 'true',
+      default: uuid()
+    },
     '@id': 'string',
     '@context': 'string',
     '@type': {
@@ -53,6 +58,13 @@ export default Model.extend({
     }
     response.label = response.labels
     delete response.labels
+
+    if (typeof response._id === 'undefined' ) {
+      response._id = ''
+      var arr = response['@id'].split("/")
+      var _id = arr[arr.length-2]
+      response._id = _id
+    }
 
     return response
   }

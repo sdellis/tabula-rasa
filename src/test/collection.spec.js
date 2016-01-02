@@ -61,6 +61,22 @@ test('a collection must be able to be created from an endpoint', function (asser
   var c = new Collection()
   c.fetch()
   assert.equal(c.manifests.get('http://iiif.io/api/presentation/2.0/example/fixtures/1/manifest.json', '@id').label[0]['@value'], 'Test 1 Manifest: Minimum Required Fields', 'should be populated from endpoint')
+
+  var ml = new ManifestList()
+  var c = new Collections.Collection()
+  c.url = 'http://iiif.io/api/presentation/2.0/example/fixtures/collection.json'
+
+  ml.fetch({
+      success: function (data) {
+          console.log(data.models[0]._id)
+          ml = data.models
+          c.manifests = ml
+
+      },
+      error: function () {
+          console.log('error while fetching')
+      }
+  })
   */
   assert.end()
 })
