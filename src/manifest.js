@@ -5,10 +5,6 @@ export default Model.extend({
 
   idAttribute: '_id',
 
-  url () {
-    return parent.url + '/' + this._id
-  },
-
   props: {
     _id: 'string',
     '@id': 'string',
@@ -29,12 +25,6 @@ export default Model.extend({
   },
 
   derived: {
-    app_url: {
-      deps: ['_id'],
-      fn () {
-        return 'presentations/' + this._id
-      }
-    },
     subjects: {
       deps: ['metadata'],
       fn () {

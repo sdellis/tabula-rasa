@@ -13,6 +13,21 @@ Tabula Rasa is written in ES2015 and transpiled down to good old JavaScript (ES5
 * [osullivan](http://github.com/IIIF/osullivan/) (Ruby)
 * [Manifesto](https://github.com/UniversalViewer/manifesto) (TypeScript) _currently read-only_
 
+Tabula Rasa has a few additional features that distinguish it from the libraries listed above.  You may find these helpful, depending on your needs.
+
+### Play nice with RESTful APIs
+Because Tabula Rasa collections and models are based on Ampersand/Backbone, we get fetch() and save() methods on all our objects. The ability to create IIIF resources from external endpoints comes in handy in a variety of scenarios.  For example, you can easily test your application against the current collection of official fixtures from the IIIF website.  You can also easily edit  IIIF resources from any endpoint (and save them back if the endpoint supports it), or even stitch resources together from multiple endpoints. Finally, you can easily migrate data from one system to another.
+
+### Object Observability
+The IIIF Presentation API is intended for front-end use.  Native Web applications need to manage the state of both objects, and the interfaces used to manipulate these objects.  Observability is the best way to separate concerns when managing state and, again, as an extension of Ampersand models and collections (which are extensions of ampersand-state), Tabula Rasa objects and models emit a JavaScript event when they are changed. This makes it easy to know when to update any views in your application.
+
+### Node.js: Frontend and Backend
+npm (along with its command line tool, the npm-client) is the official package manager for node.js, but it works great for client-side JavaScript too. It helps you publish, consume, and manage modules of JavaScript code in your applications.
+
+commonjs modules are a specification and implementation of a module system in JavaScript. They allow you to separate functionality into separate files or npm modules, that can then require each other. This makes it much easier to break the functionality of your application up into smaller chunks, that can depend on each other, rather than writing your code in one giant file.
+
+You can use tools like Browserify or Webpack that take an application written with commonjs and npm modules, and bundle it up into a single file, that you can then use in a browser.
+
 ## Getting Started
 If you want to use the good old Javascript version, simply include it in your project by installing the npm module:
 ```
