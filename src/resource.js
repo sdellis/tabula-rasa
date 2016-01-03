@@ -13,7 +13,7 @@ export default Model.extend({
   },
 
   collections: {
-    services: ServiceCollection
+    service: ServiceCollection
   },
 
   parse: function (response) {

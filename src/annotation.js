@@ -17,7 +17,7 @@ export default Model.extend({
   },
 
   collections: {
-    resources: ResourceCollection
+    resource: ResourceCollection
   },
 
   parse: function (response) {
