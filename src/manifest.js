@@ -1,6 +1,8 @@
 import uuid from 'node-uuid'
 import Model from 'ampersand-model'
 import SequenceCollection from './sequence-collection'
+import RangeCollection from './range-collection'
+import LayerCollection from './layer-collection'
 
 export default Model.extend({
 
@@ -26,7 +28,9 @@ export default Model.extend({
   },
 
   collections: {
-    sequences: SequenceCollection
+    sequences: SequenceCollection,
+    structures: RangeCollection,
+    layers: LayerCollection
   },
 
   derived: {

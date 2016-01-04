@@ -1,5 +1,4 @@
 import Model from 'ampersand-model'
-import ImageCollection from './annotation-collection'
 import AnnotationListCollection from './annotationlist-collection'
 
 export default Model.extend({
@@ -11,15 +10,12 @@ export default Model.extend({
     '@type': {
       type: 'string',
       required: 'true',
-      default: 'sc:Canvas'
+      default: 'sc:Layer'
     },
-    label: 'string',
-    height: 'number',
-    width: 'number'
+    label: 'string'
   },
 
   collections: {
-    images: ImageCollection,
     otherContent: AnnotationListCollection
   }
 
