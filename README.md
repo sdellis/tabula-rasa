@@ -15,8 +15,8 @@ Tabula Rasa is written in ES2015 and transpiled down to good old JavaScript (ES5
 
 Tabula Rasa has a few additional features that distinguish it from the libraries listed above.  You may find these helpful, depending on your needs.
 
-### Play nice with RESTful APIs
-Because Tabula Rasa collections and models are based on Ampersand/Backbone, we get fetch() and save() methods on all our objects. The ability to create IIIF resources from external endpoints comes in handy in a variety of scenarios.  For example, you can easily test your application against the current collection of official fixtures from the IIIF website.  You can also easily edit  IIIF resources from any endpoint (and save them back if the endpoint supports it), or even stitch resources together from multiple endpoints. Finally, you can easily migrate data from one system to another.
+### Persistance via RESTful APIs
+Because Tabula Rasa collections and models are based on Ampersand/Backbone, we get fetch() and save() methods on all our objects. The ability to create IIIF resources from external endpoints comes in handy in a variety of scenarios.  For example, you can easily test your application against the current collection of official fixtures from the IIIF website.  You can also easily edit  IIIF resources from any endpoint (and save them back if the endpoint supports it), or even stitch resources together from multiple endpoints. If you like Manifesto convenience methods you can use Tabula Rasa for only setters if you want.  See this [sample app](https://github.com/sdellis/tabula/releases/tag/v1.0.0-alpha) for an example of how to do that.
 
 ### Object Observability
 The IIIF Presentation API is intended for front-end use.  Native Web applications need to manage the state of both objects, and the interfaces used to manipulate these objects.  Observability is the best way to separate concerns when managing state and, again, as an extension of Ampersand models and collections (which are extensions of ampersand-state), Tabula Rasa objects and models emit a JavaScript event when they are changed. This makes it easy to know when to update any views in your application.
@@ -33,15 +33,9 @@ If you want to use the good old Javascript version, simply include it in your pr
 ```
 npm install --save tabula-rasa
 ```
-If you want to include it in your ES2015 project then, point to the ES6 release on GitHub as one of your package.json dependencies:
-```
-"dependencies": {
-    "tabula-rasa": "https://github.com/sdellis/tabula-rasa/archive/es6-1.0.2.tar.gz"
-  }
-```
 
 ## Usage
-Once it's installed, you can include it and start building IIIF Presentations.  See below for details, or play with it on the web a the [Tabula Rasa Tonic demo](https://tonicdev.com/sdellis/tabula-rasa-demo).
+Once it's installed, you can include it and start building IIIF Presentations.  See below for details, or play with it on the web a the [Tabula Rasa Tonic demo](https://tonicdev.com/sdellis/tabula-rasa-usage).
 ```
 var Presentation = require("tabula-rasa")
 
@@ -84,4 +78,4 @@ npm test
 ```
 
 ## Contribute
-This library is fairly new. Please report bugs and/or contribute fixes. If you would like to contribute a pull request, you will need to make sure you create the appropriate tests and adhere to the [standard]() style guide.
+This library is fairly new. Please report bugs and/or contribute fixes. If you would like to contribute a pull request, you will need to make sure you create the appropriate tests and adhere to the [standard](http://standardjs.com/) style guide.
