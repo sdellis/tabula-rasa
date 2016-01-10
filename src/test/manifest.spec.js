@@ -44,6 +44,26 @@ test('must be able to get manifest by _id and @id', function (assert) {
   assert.end()
 })
 
+test('a manifest must be able to be created from an endpoint', function (assert) {
+  assert.plan(0)
+  /* To do: the following code works in the browser console, but requires promises to test. Possibly use local fixtures and mocks.
+  var m = new Manifest()
+  m.url = 'http://www.mocky.io/v2/568b32e4140000a52a8a1180'
+  m.fetch({
+      success: function (data) {
+          console.log(data.models[0]._id)
+          ml = data.models
+          c.manifests = ml
+
+      },
+      error: function () {
+          console.log('error while fetching')
+      }
+  })
+  */
+  assert.end()
+})
+
 test('canvases may be listed as embedded objects or @ids that must be dereferenced', function (assert) {
   assert.plan(0)
 /*

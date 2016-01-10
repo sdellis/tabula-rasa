@@ -66,7 +66,15 @@ export default Model.extend({
     if (typeof response._id === 'undefined' ) {
       response._id = ''
       var arr = response['@id'].split("/")
-      var _id = arr[arr.length-2]
+      // account for some servers which have suffixes with slashes
+      // added to the ids such as /collection.json or /manifest.json
+      var lastEl = arr[arr.length - 1]
+      if (lastEl === '/collection.json' || lastEl === '/manifest.json'){
+        var _id = arr[arr.length-2]
+      } else {
+        var _id = arr[arr.length-1]
+      }
+
       response._id = _id
     }
 
