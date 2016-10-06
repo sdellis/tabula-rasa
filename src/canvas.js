@@ -1,6 +1,7 @@
 import Model from 'ampersand-model'
 import ImageCollection from './annotation-collection'
 import AnnotationListCollection from './annotationlist-collection'
+import Thumbnail from './thumbnail'
 
 export default Model.extend({
   idAttribute: '@id',
@@ -15,7 +16,8 @@ export default Model.extend({
     },
     label: 'string',
     height: 'number',
-    width: 'number'
+    width: 'number',
+    thumbnail: 'string'
   },
 
   collections: {
