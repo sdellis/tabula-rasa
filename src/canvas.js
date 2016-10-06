@@ -15,7 +15,8 @@ export default Model.extend({
     },
     label: 'string',
     height: 'number',
-    width: 'number'
+    width: 'number',
+    thumbnail: 'string'
   },
 
   collections: {

@@ -1,5 +1,5 @@
 import Model from 'ampersand-model'
-import ServiceCollection from './service-collection'
+import Service from './service'
 
 export default Model.extend({
   idAttribute: '@id',
@@ -12,8 +12,8 @@ export default Model.extend({
     width: 'number'
   },
 
-  collections: {
-    service: ServiceCollection
+  children: {
+    service: Service
   },
 
   parse: function (response) {

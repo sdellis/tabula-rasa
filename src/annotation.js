@@ -1,5 +1,5 @@
 import Model from 'ampersand-model'
-import ResourceCollection from './resource-collection'
+import Resource from './resource'
 
 export default Model.extend({
   idAttribute: '@id',
@@ -16,8 +16,8 @@ export default Model.extend({
     about: 'string'
   },
 
-  collections: {
-    resource: ResourceCollection
+  children: {
+    resource: Resource
   },
 
   parse: function (response) {
