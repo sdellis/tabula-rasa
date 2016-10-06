@@ -1,7 +1,6 @@
 import Model from 'ampersand-model'
 import ImageCollection from './annotation-collection'
 import AnnotationListCollection from './annotationlist-collection'
-import Thumbnail from './thumbnail'
 
 export default Model.extend({
   idAttribute: '@id',
