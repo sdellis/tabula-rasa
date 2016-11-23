@@ -1,4 +1,4 @@
-import uuid from 'node-uuid'
+import uuid from 'uuid'
 import Model from 'ampersand-model'
 import SequenceCollection from './sequence-collection'
 import RangeCollection from './range-collection'
